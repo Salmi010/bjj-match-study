@@ -458,7 +458,7 @@
                 // Add click handler to open in viewer
                 card.onclick = () => {
                     const encodedPath = encodeURIComponent(match.filePath);
-                    window.location.href = `viewer/index.html?v=${match.videoId}&analysis=${encodedPath}`;
+                    window.location.href = `viewer/index.html?id=${match.videoId}&path=${encodedPath}`;
                 };
                 
                 grid.appendChild(card);

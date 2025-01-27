@@ -222,8 +222,8 @@
     <script>
         let currentMarkdown = '';
         const urlParams = new URLSearchParams(window.location.search);
-        const analysisPath = urlParams.get('analysis');
-        const videoId = urlParams.get('v');
+        const analysisPath = urlParams.get('path');
+        const videoId = urlParams.get('id');
         
         // Load YouTube API first
         const tag = document.createElement('script');
