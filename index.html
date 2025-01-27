@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJJ Match Analysis</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .navbar {
+            background: black;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            color: #2196F3;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .search-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        #searchInput {
+            width: 80%;
+            max-width: 600px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            font-size: 16px;
+        }
+
+        .filter-section {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .filter-select {
+            padding: 8px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 16px;
+            min-width: 200px;
+            cursor: pointer;
+        }
+
+        .filter-select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .filter-tag {
+            padding: 6px 12px;
+            border-radius: 16px;
+            background: #e9ecef;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .filter-tag.active {
+            background: #007bff;
+            color: white;
+        }
+
+        .active-filters {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .active-filter {
+            padding: 4px 12px;
+            background: #007bff;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+        }
+
+        .active-filter .remove {
+            margin-left: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .video-card {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .video-info {
+            padding: 0 4px;
+        }
+
+        .video-title {
+            font-size: 16px;
+            margin: 0 0 4px 0;
+            color: #000;
+        }
+
+        .video-event {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .labels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .label {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="/search.html">BJJ Match Study</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="container">
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Search matches, techniques, or positions...">
+            </div>
+
+            <div class="filter-section">
+                <select id="filterType" class="filter-select">
+                    <option value="">Select a filter type...</option>
+                    <option value="positions">Positions</option>
+                    <option value="techniques">Techniques</option>
+                    <option value="submissions">Submissions</option>
+                </select>
+                
+                <div id="filterTags" class="filter-tags">
+                    <!-- Will be populated dynamically -->
+                </div>
+                
+                <div id="activeFilters" class="active-filters">
+                    <!-- Will show currently active filters -->
+                </div>
+            </div>
+
+            <div class="video-grid" id="videoGrid">
+                <!-- Videos will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state for filters
+        let allFilters = {
+            positions: new Set(),
+            techniques: new Set(),
+            submissions: new Set()
+        };
+        
+        let activeFilters = {
+            positions: new Set(),
+            techniques: new Set(),
+            submissions: new Set()
+        };
+
+        // Extract filters from markdown content
+        function extractFilters(content) {
+            const labelSection = content.match(/## Label List[\s\S]*?(?=##|$)/);
+            if (labelSection) {
+                const text = labelSection[0];
+                
+                // Extract each type of label
+                const positions = text.match(/Positions: (.*)/)?.[1]?.split(',').map(s => s.trim()).filter(Boolean) || [];
+                const techniques = text.match(/Techniques: (.*)/)?.[1]?.split(',').map(s => s.trim()).filter(Boolean) || [];
+                const submissions = text.match(/Submissions?: (.*)/)?.[1]?.split(',').map(s => s.trim()).filter(Boolean) || [];
+                
+                return { positions, techniques, submissions };
+            }
+            return { positions: [], techniques: [], submissions: [] };
+        }
+
+        // Function to load and parse markdown files
+        async function loadMatches() {
+            try {
+                // List of all markdown files
+                const markdownFiles = [
+                    'Adam-Wardzinski-vs-Gustavo-Batista_The-IBJJF-Crown-2024.md',
+                    'Adam-Wardzinski-vs-Horlando-Monteiro_The-IBJJF-Crown-2024.md',
+                    'Adam-Wardzinski-vs-Matheus-Spirandeli_The-IBJJF-Crown-2024.md',
+                    'Ademir-Barreto-vs-Eduardo-Granzotto_The-IBJJF-Crown-2024.md',
+                    'Ademir-Barreto-vs-Jamil-Hill-Taylor_The-IBJJF-Crown-2024.md',
+                    'Andy-Murasaki-vs-Jaime-Canuto_The-IBJJF-Crown-2024.md',
+                    'Andy-Murasaki-vs-Mauricio-Oliveira_The-IBJJF-Crown-2024.md',
+                    'Brianna-Ste-Marie-vs-Gabi-McComb_The-IBJJF-Crown-2024.md',
+                    'Brianna-Ste-Marie-vs-Jaine-Fragoso_The-IBJJF-Crown-2024.md',
+                    'Brianna-Ste-Marie-vs-Janaina-Maia_The-IBJJF-Crown-2024.md',
+                    'Cassia-Moura-vs-Thaynara-Victória_The-IBJJF-Crown-2024.md',
+                    'Diego-Pato-vs-Jamil-Hill-Taylor_The-IBJJF-Crown-2024.md',
+                    'Diego-Pato-vs-Joao-Bisnaga_The-IBJJF-Crown-2024.md',
+                    'Diego-Pato-vs-Osvaldo-Queixinho_The-IBJJF-Crown-2024.md',
+                    'Elijah-Dorsey-vs-Espen-Mathiesen_European-Championship-2024.md',
+                    'Elijah-Dorsey-vs-Matheus-Luna_The-IBJJF-Crown-2024.md',
+                    'Erich-Munis-vs-Kristof-Szucs_The-IBJJF-Crown-2024.md',
+                    'Erich-Munis-vs-Marcus-Scooby_The-IBJJF-Crown-2024.md',
+                    'Erich-Munis-vs-Pedro-Machado_The-IBJJF-Crown-2024.md',
+                    'Gabi-McComb-vs-Cassia-Moura_The-IBJJF-Crown-2024.md',
+                    'Gabi-McComb-vs-Vitoria-Vieira_The-IBJJF-Crown-2024.md',
+                    'Gabrieli-Pessanha-vs-Mayara-Custodio_The-IBJJF-Crown-2024.md',
+                    'Gabrieli-Pessanha-vs-Melissa-Stricker_The-IBJJF-Crown-2024.md',
+                    'Gabrieli-Pessanha-vs-Tamiris-Silva_The-IBJJF-Crown-2024.md',
+                    'Gustavo-Batista-vs-Joao-Nicolite_The-IBJJF-Crown-2024.md',
+                    'Gutemberg-Pereira-vs-Felipe-Costa_The-IBJJF-Crown-2024.md',
+                    'Horlando-Monteiro-vs-Paulo-Merlin_The-IBJJF-Crown-2024.md',
+                    'Jamil-Hill-Taylor-vs-Marco-Mendes_The-IBJJF-Crown-2024.md',
+                    'Janaina-Maia-vs-Cassia-Moura_The-IBJJF-Crown-2024.md',
+                    'Janaina-Maia-vs-Vitória-Assis_The-IBJJF-Crown-2024.md',
+                    'Joao-Bisnaga-vs-Ademir-Barreto_The-IBJJF-Crown-2024.md',
+                    'Joao-Bisnaga-vs-Kennedy-Maciel_The-IBJJF-Crown-2024.md',
+                    'Marcus-Scooby-vs-Gutemberg-Pereira_The-IBJJF-Crown-2024.md',
+                    'Marcus-Scooby-vs-Roosevelt-Souza_The-IBJJF-Crown-2024.md',
+                    'Mauricio-Oliveira-vs-Manuel-Ribamar_The-IBJJF-Crown-2024.md',
+                    'Melissa-Stricker-vs-Isabely-Lemos_The-IBJJF-Crown-2024.md',
+                    'Melissa-Stricker-vs-Nathiely-de-Jesus_The-IBJJF-Crown-2024.md',
+                    'Nathiely-de-Jesus-vs-Maca-Vicentini_The-IBJJF-Crown-2024.md',
+                    'Nathiely-de-Jesus-vs-Tamiris-Silva_The-IBJJF-Crown-2024.md',
+                    'Pedro-Machado-vs-Kjetil-Lydvo_The-IBJJF-Crown-2024.md',
+                    'Tainan-Dalpra-vs-Elijah-Dorsey_The-IBJJF-Crown-2024.md',
+                    'Tainan-Dalpra-vs-Gabriel-Galvao_The-IBJJF-Crown-2024.md',
+                    'Tainan-Dalpra-vs-Rolando-Samson_Pan-Championship-2023.md',
+                    'Tainan-Dalpra-vs-Ronaldo-Junior_World-Championship-2021.md',
+                    'Tainan-Dalpra-vs-Tommy-Langaker_World-Championship-2021.md',
+                    'Tamiris-Silva-vs-Giovanna-Jara_The-IBJJF-Crown-2024.md'
+                ];
+
+                const matches = await Promise.all(markdownFiles.map(async file => {
+                    try {
+                        const response = await fetch(`/analysis/${file}`);
+                        const content = await response.text();
+
+                        // Get filename parts
+                        const [matchPart, eventPart] = file.replace('.md', '').split('_');
+                        
+                        // Extract competitor names
+                        const title = matchPart.replace(/-/g, ' ');
+                        
+                        // Extract event and year
+                        const subtitle = eventPart.replace(/-/g, ' ');
+                        
+                        // Get video URL from markdown content
+                        const videoUrl = content.match(/Video URL[^\n]+/)?.[0]?.split(': ')[1]?.trim() || '';
+                        const videoId = videoUrl?.split('v=')[1]?.split('&')[0] || '';
+                        
+                        // Extract labels
+                        const labels = extractFilters(content);
+                        
+                        // Add labels to global filters
+                        labels.positions.forEach(p => allFilters.positions.add(p));
+                        labels.techniques.forEach(t => allFilters.techniques.add(t));
+                        labels.submissions.forEach(s => allFilters.submissions.add(s));
+                        
+                        return {
+                            title,
+                            subtitle,
+                            videoUrl,
+                            videoId,
+                            filePath: `/analysis/${file}`,
+                            labels
+                        };
+                    } catch (error) {
+                        console.error(`Error loading file ${file}:`, error);
+                        return null;
+                    }
+                }));
+
+                // Initial display
+                displayMatches(matches.filter(match => match !== null));
+                populateFilterTags();
+            } catch (error) {
+                console.error('Error loading matches:', error);
+            }
+        }
+
+        // Toggle a filter
+        function toggleFilter(tag, type) {
+            const button = document.querySelector(`.filter-tag[data-tag="${tag}"]`);
+            
+            if (activeFilters[type].has(tag)) {
+                activeFilters[type].delete(tag);
+                button?.classList.remove('active');
+            } else {
+                activeFilters[type].add(tag);
+                button?.classList.add('active');
+            }
+            
+            updateActiveFiltersDisplay();
+            filterAndDisplayMatches();
+        }
+
+        // Remove a filter
+        function removeFilter(tag, type) {
+            activeFilters[type].delete(tag);
+            const button = document.querySelector(`.filter-tag[data-tag="${tag}"]`);
+            button?.classList.remove('active');
+            
+            updateActiveFiltersDisplay();
+            filterAndDisplayMatches();
+        }
+
+        // Update active filters display
+        function updateActiveFiltersDisplay() {
+            const container = document.getElementById('activeFilters');
+            container.innerHTML = '';
+            
+            Object.entries(activeFilters).forEach(([type, filters]) => {
+                filters.forEach(filter => {
+                    const filterElement = document.createElement('div');
+                    filterElement.className = 'active-filter';
+                    filterElement.innerHTML = `
+                        ${filter} (${type})
+                        <span class="remove" onclick="removeFilter('${filter}', '${type}')">&times;</span>
+                    `;
+                    container.appendChild(filterElement);
+                });
+            });
+        }
+
+        // Populate filter tags based on selected type
+        function populateFilterTags() {
+            const filterType = document.getElementById('filterType').value;
+            const tagsContainer = document.getElementById('filterTags');
+            tagsContainer.innerHTML = '';
+            
+            if (!filterType) {
+                return; // Don't show any tags if no filter type is selected
+            }
+            
+            Array.from(allFilters[filterType]).sort().forEach(tag => {
+                const button = document.createElement('button');
+                button.className = `filter-tag${activeFilters[filterType].has(tag) ? ' active' : ''}`;
+                button.textContent = tag;
+                button.dataset.tag = tag;
+                button.onclick = () => toggleFilter(tag, filterType);
+                tagsContainer.appendChild(button);
+            });
+        }
+
+        // Function to display matches in the grid
+        function displayMatches(matches) {
+            const grid = document.getElementById('videoGrid');
+            grid.innerHTML = '';
+            
+            matches.forEach(match => {
+                const card = document.createElement('div');
+                card.className = 'video-card';
+                card.dataset.labels = JSON.stringify(match.labels);
+                card.dataset.searchContent = `
+                    ${match.title.toLowerCase()}
+                    ${match.subtitle.toLowerCase()}
+                    ${match.labels.positions.join(' ').toLowerCase()}
+                    ${match.labels.techniques.join(' ').toLowerCase()}
+                    ${match.labels.submissions.join(' ').toLowerCase()}
+                `;
+                
+                const thumbnail = match.videoId ? 
+                    `https://img.youtube.com/vi/${match.videoId}/hqdefault.jpg` :
+                    'default-thumbnail.jpg';
+                
+                card.innerHTML = `
+                    <img class="thumbnail" src="${thumbnail}" alt="${match.title}">
+                    <div class="video-info">
+                        <h3 class="video-title">${match.title}</h3>
+                        <p class="video-event">${match.subtitle}</p>
+                        <div class="labels">
+                            ${[...match.labels.positions, ...match.labels.techniques, ...match.labels.submissions]
+                                .map(label => `<span class="label">${label}</span>`)
+                                .join('')}
+                        </div>
+                    </div>
+                `;
+                
+                // Add click handler to open in viewer
+                card.onclick = () => {
+                    const encodedPath = encodeURIComponent(match.filePath);
+                    window.location.href = `viewer/index.html?v=${match.videoId}&analysis=${encodedPath}`;
+                };
+                
+                grid.appendChild(card);
+            });
+            
+            // Initial filter
+            filterAndDisplayMatches();
+        }
+
+        // Filter and display matches
+        function filterAndDisplayMatches() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.video-card');
+            
+            cards.forEach(card => {
+                const searchContent = card.dataset.searchContent;
+                const labels = card.dataset.labels ? JSON.parse(card.dataset.labels) : { positions: [], techniques: [], submissions: [] };
+                
+                // Check if search term matches any content
+                const textMatch = searchContent.includes(searchTerm);
+                
+                // Check if all active filters are present in the labels
+                const filterMatch = Object.entries(activeFilters).every(([type, filters]) => {
+                    if (filters.size === 0) return true;
+                    return Array.from(filters).every(filter => 
+                        labels[type]?.includes(filter)
+                    );
+                });
+                
+                card.style.display = (textMatch && filterMatch) ? 'block' : 'none';
+            });
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterAndDisplayMatches);
+        document.getElementById('filterType').addEventListener('change', populateFilterTags);
+
+        // Initialize
+        loadMatches();
+    </script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJJ Match Analysis Viewer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .navbar {
+            background: black;
+            border-bottom: 1px solid #333;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8px 24px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .navbar a:hover {
+            color: #2196F3;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 68% 30%;
+            gap: 2%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .main-content {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        .video-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            margin-bottom: 20px;
+        }
+
+        .video-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0;
+            padding: 12px 0;
+        }
+
+        .tags-section {
+            padding: 0;
+        }
+
+        .tag-group {
+            margin-bottom: 16px;
+        }
+
+        .tag-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .tag-group h3 {
+            font-size: 16px;
+            margin: 0 0 8px 0;
+            color: #0f0f0f;
+        }
+
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f2f2f2;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #0f0f0f;
+        }
+
+        .match-breakdown {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .match-breakdown h2 {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+            padding: 12px;
+            color: #0f0f0f;
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+        }
+
+        .timestamps-list {
+            list-style: none;
+            margin: 0;
+            padding: 8px 0;
+        }
+
+        .timestamp {
+            display: flex;
+            align-items: flex-start;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.1s;
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .timestamp:last-child {
+            border-bottom: none;
+        }
+
+        .timestamp:hover {
+            background: #f2f2f2;
+        }
+
+        .timestamp-time {
+            color: #606060;
+            font-size: 13px;
+            min-width: 40px;
+            margin-right: 12px;
+        }
+
+        .timestamp-description {
+            font-size: 13px;
+            color: #0f0f0f;
+            line-height: 1.4;
+        }
+
+        .timestamp-description strong {
+            font-weight: 600;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="/search.html">BJJ Match Study</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="main-content">
+            <div class="video-section">
+                <div class="video-container" id="player"></div>
+                
+                <div class="video-info">
+                    <h2 class="video-title" id="title">Loading...</h2>
+                    
+                    <div class="tags-section">
+                        <div class="tag-group">
+                            <h3>Positions</h3>
+                            <div class="tag-list" id="positions"></div>
+                        </div>
+                        
+                        <div class="tag-group">
+                            <h3>Techniques</h3>
+                            <div class="tag-list" id="techniques"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match-breakdown">
+                <h2>Match Breakdown</h2>
+                <div id="timestamps"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentMarkdown = '';
+        const urlParams = new URLSearchParams(window.location.search);
+        const analysisPath = urlParams.get('analysis');
+        const videoId = urlParams.get('v');
+        
+        // Load YouTube API first
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Initialize YouTube player
+        let player;
+        function onYouTubeIframeAPIReady() {
+            console.log('YouTube API Ready');
+            if (!videoId) {
+                console.error('No video ID provided');
+                return;
+            }
+            
+            try {
+                player = new YT.Player('player', {
+                    width: '100%',
+                    height: '100%',
+                    videoId: videoId,
+                    playerVars: {
+                        'autoplay': 0,
+                        'playsinline': 1,
+                        'rel': 0,
+                        'modestbranding': 1,
+                        'origin': window.location.origin
+                    },
+                    events: {
+                        'onReady': function(event) {
+                            console.log('Player ready');
+                        },
+                        'onError': function(event) {
+                            console.error('Player error:', event);
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error('Error creating player:', error);
+            }
+        }
+
+        // Load and parse the markdown file
+        fetch('/..' + analysisPath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(markdown => {
+                console.log('Markdown loaded successfully');
+                currentMarkdown = markdown;
+                parseMarkdown(markdown);
+            })
+            .catch(error => {
+                console.error('Error loading markdown:', error);
+                document.getElementById('title').textContent = 'Error loading match data';
+            });
+
+        function parseMarkdown(markdown) {
+            console.log('Parsing markdown...');
+            
+            // Extract title
+            const titleMatch = markdown.match(/# (.*)/);
+            if (titleMatch) {
+                document.getElementById('title').textContent = titleMatch[1];
+            }
+
+            // Extract positions
+            const positionsMatch = markdown.match(/Positions:(.*)/);
+            if (positionsMatch) {
+                const positions = positionsMatch[1].split(',').map(p => p.trim());
+                const positionsDiv = document.getElementById('positions');
+                positionsDiv.innerHTML = ''; // Clear existing
+                positions.forEach(position => {
+                    const tag = document.createElement('span');
+                    tag.className = 'tag';
+                    tag.textContent = position;
+                    positionsDiv.appendChild(tag);
+                });
+            }
+
+            // Extract techniques
+            const techniquesMatch = markdown.match(/Techniques:(.*)/);
+            if (techniquesMatch) {
+                const techniques = techniquesMatch[1].split(',').map(t => t.trim());
+                const techniquesDiv = document.getElementById('techniques');
+                techniquesDiv.innerHTML = ''; // Clear existing
+                techniques.forEach(technique => {
+                    const tag = document.createElement('span');
+                    tag.className = 'tag';
+                    tag.textContent = technique;
+                    techniquesDiv.appendChild(tag);
+                });
+            }
+
+            // Extract timestamps and descriptions
+            const timestampsDiv = document.getElementById('timestamps');
+            timestampsDiv.innerHTML = ''; // Clear existing timestamps
+            
+            // Find the Fight Breakdown section
+            const breakdownMatch = markdown.match(/## Fight Breakdown\n([\s\S]*?)(?=\n##|$)/);
+            if (breakdownMatch) {
+                const breakdownContent = breakdownMatch[1];
+                const timestampRegex = /\[(\d{2}:\d{2})\]\((.*?)&t=(\d+)\)(.*)/g;
+                let match;
+
+                while ((match = timestampRegex.exec(breakdownContent)) !== null) {
+                    const [_, timestamp, url, seconds, description] = match;
+                    
+                    // Create clickable div for the entire timestamp
+                    const timestampDiv = document.createElement('div');
+                    timestampDiv.className = 'timestamp';
+                    timestampDiv.onclick = () => seekToTime(seconds);
+                    
+                    // Process description to handle markdown-style bold text
+                    const processedDescription = description
+                        .trim()
+                        .replace(/^- /, '') // Remove leading dash
+                        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>'); // Convert **text** to <strong>
+                    
+                    timestampDiv.innerHTML = `
+                        <span class="timestamp-time">${timestamp}</span>
+                        <span class="timestamp-description">${processedDescription}</span>
+                    `;
+                    timestampsDiv.appendChild(timestampDiv);
+                }
+            }
+        }
+
+        function seekToTime(seconds) {
+            if (player && typeof player.seekTo === 'function') {
+                player.seekTo(seconds);
+                player.playVideo();
+            }
+        }
+    </script>
+</body>
+</html>
