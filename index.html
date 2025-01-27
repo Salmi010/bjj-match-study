@@ -193,7 +193,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar-content">
-            <a href="/search.html">BJJ Match Study</a>
+            <a href="./">BJJ Match Study</a>
         </div>
     </nav>
 
@@ -311,7 +311,7 @@
 
                 const matches = await Promise.all(markdownFiles.map(async file => {
                     try {
-                        const response = await fetch(`/analysis/${file}`);
+                        const response = await fetch(`analysis/${file}`);
                         const content = await response.text();
 
                         // Get filename parts
@@ -325,7 +325,7 @@
                         
                         // Get video URL from markdown content
                         const videoUrl = content.match(/Video URL[^\n]+/)?.[0]?.split(': ')[1]?.trim() || '';
-                        const videoId = videoUrl?.split('v=')[1]?.split('&')[0] || '';
+                        const videoId = videoUrl?.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/)?.[1] || '';
                         
                         // Extract labels
                         const labels = extractFilters(content);
@@ -340,7 +340,7 @@
                             subtitle,
                             videoUrl,
                             videoId,
-                            filePath: `/analysis/${file}`,
+                            filePath: `analysis/${file}`,
                             labels
                         };
                     } catch (error) {
