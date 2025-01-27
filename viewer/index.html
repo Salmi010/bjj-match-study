@@ -267,7 +267,7 @@
         }
 
         // Load and parse the markdown file
-        fetch('/..' + analysisPath)
+        fetch('../' + analysisPath)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
