@@ -240,117 +240,38 @@
             submissions: new Set()
         };
 
-        // Extract filters from markdown content
-        function extractFilters(content) {
-            const labelSection = content.match(/## Label List[\s\S]*?(?=##|$)/);
-            if (labelSection) {
-                const text = labelSection[0];
-                
-                // Extract each type of label
-                const positions = text.match(/Positions: (.*)/)?.[1]?.split(',').map(s => s.trim()).filter(Boolean) || [];
-                const techniques = text.match(/Techniques: (.*)/)?.[1]?.split(',').map(s => s.trim()).filter(Boolean) || [];
-                const submissions = text.match(/Submissions?: (.*)/)?.[1]?.split(',').map(s => s.trim()).filter(Boolean) || [];
-                
-                return { positions, techniques, submissions };
-            }
-            return { positions: [], techniques: [], submissions: [] };
-        }
-
-        // Function to load and parse markdown files
+        // Load match metadata from the generated manifest. Regenerate with
+        // `python scripts/build_manifest.py` after adding or editing markdown.
         async function loadMatches() {
             try {
-                // List of all markdown files
-                const markdownFiles = [
-                    'Adam-Wardzinski-vs-Gustavo-Batista_The-IBJJF-Crown-2024.md',
-                    'Adam-Wardzinski-vs-Horlando-Monteiro_The-IBJJF-Crown-2024.md',
-                    'Adam-Wardzinski-vs-Matheus-Spirandeli_The-IBJJF-Crown-2024.md',
-                    'Ademir-Barreto-vs-Eduardo-Granzotto_The-IBJJF-Crown-2024.md',
-                    'Ademir-Barreto-vs-Jamil-Hill-Taylor_The-IBJJF-Crown-2024.md',
-                    'Andy-Murasaki-vs-Jaime-Canuto_The-IBJJF-Crown-2024.md',
-                    'Andy-Murasaki-vs-Mauricio-Oliveira_The-IBJJF-Crown-2024.md',
-                    'Brianna-Ste-Marie-vs-Gabi-McComb_The-IBJJF-Crown-2024.md',
-                    'Brianna-Ste-Marie-vs-Jaine-Fragoso_The-IBJJF-Crown-2024.md',
-                    'Brianna-Ste-Marie-vs-Janaina-Maia_The-IBJJF-Crown-2024.md',
-                    'Cassia-Moura-vs-Thaynara-Victória_The-IBJJF-Crown-2024.md',
-                    'Diego-Pato-vs-Jamil-Hill-Taylor_The-IBJJF-Crown-2024.md',
-                    'Diego-Pato-vs-Joao-Bisnaga_The-IBJJF-Crown-2024.md',
-                    'Diego-Pato-vs-Osvaldo-Queixinho_The-IBJJF-Crown-2024.md',
-                    'Elijah-Dorsey-vs-Espen-Mathiesen_European-Championship-2024.md',
-                    'Elijah-Dorsey-vs-Matheus-Luna_The-IBJJF-Crown-2024.md',
-                    'Erich-Munis-vs-Kristof-Szucs_The-IBJJF-Crown-2024.md',
-                    'Erich-Munis-vs-Marcus-Scooby_The-IBJJF-Crown-2024.md',
-                    'Erich-Munis-vs-Pedro-Machado_The-IBJJF-Crown-2024.md',
-                    'Gabi-McComb-vs-Cassia-Moura_The-IBJJF-Crown-2024.md',
-                    'Gabi-McComb-vs-Vitoria-Vieira_The-IBJJF-Crown-2024.md',
-                    'Gabrieli-Pessanha-vs-Mayara-Custodio_The-IBJJF-Crown-2024.md',
-                    'Gabrieli-Pessanha-vs-Melissa-Stricker_The-IBJJF-Crown-2024.md',
-                    'Gabrieli-Pessanha-vs-Tamiris-Silva_The-IBJJF-Crown-2024.md',
-                    'Gustavo-Batista-vs-Joao-Nicolite_The-IBJJF-Crown-2024.md',
-                    'Gutemberg-Pereira-vs-Felipe-Costa_The-IBJJF-Crown-2024.md',
-                    'Horlando-Monteiro-vs-Paulo-Merlin_The-IBJJF-Crown-2024.md',
-                    'Jamil-Hill-Taylor-vs-Marco-Mendes_The-IBJJF-Crown-2024.md',
-                    'Janaina-Maia-vs-Cassia-Moura_The-IBJJF-Crown-2024.md',
-                    'Janaina-Maia-vs-Vitória-Assis_The-IBJJF-Crown-2024.md',
-                    'Joao-Bisnaga-vs-Ademir-Barreto_The-IBJJF-Crown-2024.md',
-                    'Joao-Bisnaga-vs-Kennedy-Maciel_The-IBJJF-Crown-2024.md',
-                    'Marcus-Scooby-vs-Gutemberg-Pereira_The-IBJJF-Crown-2024.md',
-                    'Marcus-Scooby-vs-Roosevelt-Souza_The-IBJJF-Crown-2024.md',
-                    'Mauricio-Oliveira-vs-Manuel-Ribamar_The-IBJJF-Crown-2024.md',
-                    'Melissa-Stricker-vs-Isabely-Lemos_The-IBJJF-Crown-2024.md',
-                    'Melissa-Stricker-vs-Nathiely-de-Jesus_The-IBJJF-Crown-2024.md',
-                    'Nathiely-de-Jesus-vs-Maca-Vicentini_The-IBJJF-Crown-2024.md',
-                    'Nathiely-de-Jesus-vs-Tamiris-Silva_The-IBJJF-Crown-2024.md',
-                    'Pedro-Machado-vs-Kjetil-Lydvo_The-IBJJF-Crown-2024.md',
-                    'Tainan-Dalpra-vs-Elijah-Dorsey_The-IBJJF-Crown-2024.md',
-                    'Tainan-Dalpra-vs-Gabriel-Galvao_The-IBJJF-Crown-2024.md',
-                    'Tainan-Dalpra-vs-Rolando-Samson_Pan-Championship-2023.md',
-                    'Tainan-Dalpra-vs-Ronaldo-Junior_World-Championship-2021.md',
-                    'Tainan-Dalpra-vs-Tommy-Langaker_World-Championship-2021.md',
-                    'Tamiris-Silva-vs-Giovanna-Jara_The-IBJJF-Crown-2024.md'
-                ];
+                const response = await fetch('analysis/index.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status} loading analysis/index.json`);
+                }
+                const manifest = await response.json();
 
-                const matches = await Promise.all(markdownFiles.map(async file => {
-                    try {
-                        const response = await fetch(`analysis/${file}`);
-                        const content = await response.text();
+                const matches = manifest.matches.map(entry => {
+                    const labels = {
+                        positions: entry.labels?.positions ?? [],
+                        techniques: entry.labels?.techniques ?? [],
+                        submissions: entry.labels?.submissions ?? []
+                    };
 
-                        // Get filename parts
-                        const [matchPart, eventPart] = file.replace('.md', '').split('_');
-                        
-                        // Extract competitor names
-                        const title = matchPart.replace(/-/g, ' ');
-                        
-                        // Extract event and year
-                        const subtitle = eventPart.replace(/-/g, ' ');
-                        
-                        // Get video URL from markdown content
-                        const videoUrl = content.match(/Video URL[^\n]+/)?.[0]?.split(': ')[1]?.trim() || '';
-                        const videoId = videoUrl?.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/)?.[1] || '';
-                        
-                        // Extract labels
-                        const labels = extractFilters(content);
-                        
-                        // Add labels to global filters
-                        labels.positions.forEach(p => allFilters.positions.add(p));
-                        labels.techniques.forEach(t => allFilters.techniques.add(t));
-                        labels.submissions.forEach(s => allFilters.submissions.add(s));
-                        
-                        return {
-                            title,
-                            subtitle,
-                            videoUrl,
-                            videoId,
-                            filePath: `analysis/${file}`,
-                            labels
-                        };
-                    } catch (error) {
-                        console.error(`Error loading file ${file}:`, error);
-                        return null;
-                    }
-                }));
+                    labels.positions.forEach(p => allFilters.positions.add(p));
+                    labels.techniques.forEach(t => allFilters.techniques.add(t));
+                    labels.submissions.forEach(s => allFilters.submissions.add(s));
 
-                // Initial display
-                displayMatches(matches.filter(match => match !== null));
+                    return {
+                        title: entry.title,
+                        subtitle: entry.event,
+                        videoUrl: entry.videoUrl,
+                        videoId: entry.videoId,
+                        filePath: `analysis/${entry.file}`,
+                        labels
+                    };
+                });
+
+                displayMatches(matches);
                 populateFilterTags();
             } catch (error) {
                 console.error('Error loading matches:', error);

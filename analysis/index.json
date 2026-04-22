@@ -1,0 +1,1332 @@
+{
+  "count": 46,
+  "matches": [
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Adam-Wardzinski-vs-Gustavo-Batista_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Butterfly Guard",
+          "Closed Guard",
+          "Half Guard",
+          "Back Take"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Butterfly Hook",
+          "Cross Collar Grip",
+          "Butterfly Sweep",
+          "Arm Lock",
+          "Underhook"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Adam Wardzinski vs Gustavo Batista",
+      "videoId": "rRHF3uI34Ts",
+      "videoUrl": "https://www.youtube.com/watch?v=rRHF3uI34Ts",
+      "winner": "Adam Wardzinski",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Adam-Wardzinski-vs-Horlando-Monteiro_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Knee on Belly",
+          "Butterfly Guard",
+          "Half Guard"
+        ],
+        "submissions": [
+          "Not specified"
+        ],
+        "techniques": [
+          "Triangle Choke attempt",
+          "Sprawl",
+          "Ankle Pick Sweep",
+          "Takedown"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Not specified",
+      "title": "Adam Wardzinski vs Horlando Monteiro",
+      "videoId": "TWv3FLa1Jr8",
+      "videoUrl": "https://www.youtube.com/watch?v=TWv3FLa1Jr8",
+      "winner": "Adam Wardzinski",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Adam-Wardzinski-vs-Matheus-Spirandeli_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Half Guard",
+          "Half Butterfly Guard",
+          "50/50 Guard",
+          "Mount"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Sweep",
+          "Arm Weave Style Pass"
+        ],
+        "transitions": [
+          "Transition to Half Guard",
+          "Attempt to Set Up 50/50 Guard",
+          "Securing Pass Points",
+          "Achieving Mount"
+        ]
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Adam Wardzinski vs Matheus Spirandeli",
+      "videoId": "ESM4I3XVsMY",
+      "videoUrl": "https://www.youtube.com/watch?v=ESM4I3XVsMY",
+      "winner": "Adam Wardzinski",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Ademir-Barreto-vs-Eduardo-Granzotto_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Back Take",
+          "Deep Half Guard",
+          "50/50 Guard"
+        ],
+        "submissions": [
+          "Kneebar"
+        ],
+        "techniques": [
+          "Seat Belt Grip",
+          "Advantage",
+          "Waiter Sweep",
+          "Knee Cut",
+          "Stack Pass",
+          "Kneebar"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Kneebar",
+      "title": "Ademir Barreto vs Eduardo Granzotto",
+      "videoId": "D_tPAw0bfCI",
+      "videoUrl": "https://www.youtube.com/watch?v=D_tPAw0bfCI",
+      "winner": "Ademir Barreto",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Ademir-Barreto-vs-Jamil-Hill-Taylor_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Triangle"
+        ],
+        "submissions": [
+          "Toe Hold"
+        ],
+        "techniques": [
+          "Toe Hold"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Toe Hold",
+      "title": "Ademir Barreto vs Jamil Hill Taylor",
+      "videoId": "n43_qbOL2xI",
+      "videoUrl": "https://www.youtube.com/watch?v=n43_qbOL2xI",
+      "winner": "Ademir Barreto",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Andy-Murasaki-vs-Jaime-Canuto_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Deep De La Riva",
+          "Single Leg X",
+          "Deep Half Guard",
+          "Side Control",
+          "Knee on Belly",
+          "Mount"
+        ],
+        "submissions": [
+          "N/A"
+        ],
+        "techniques": [
+          "Sweep",
+          "Guard Pass"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Andy Murasaki vs Jaime Canuto",
+      "videoId": "Sl-2hK2yCis",
+      "videoUrl": "https://www.youtube.com/watch?v=Sl-2hK2yCis",
+      "winner": "Andy Murasaki",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Andy-Murasaki-vs-Mauricio-Oliveira_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Single X-Guard",
+          "Back take"
+        ],
+        "submissions": [
+          "Armbar"
+        ],
+        "techniques": [
+          "Sweep",
+          "Guard Pass",
+          "Armbar"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Armbar",
+      "title": "Andy Murasaki vs Mauricio Oliveira",
+      "videoId": "faUxzXLOwpY",
+      "videoUrl": "https://www.youtube.com/watch?v=faUxzXLOwpY",
+      "winner": "Andy Murasaki",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Brianna-Ste-Marie-vs-Gabi-McComb_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "Knee Shield"
+        ],
+        "submissions": [
+          "Choke from Overhook Grip"
+        ],
+        "techniques": [
+          "Guard Pull",
+          "Head Control",
+          "Crossface",
+          "Cross Sleeve Grip",
+          "Posture Up",
+          "Cross Collar Grip Strip",
+          "Single Leg Takedown Attempt",
+          "Heavy Sprawl",
+          "Guillotine Choke Attempt",
+          "Overhook Grip"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Choke from the Overhook Grip",
+      "title": "Brianna Ste Marie vs Gabi McComb",
+      "videoId": "-kFr8fA2xJk",
+      "videoUrl": "https://www.youtube.com/watch?v=-kFr8fA2xJk",
+      "winner": "Brianna Ste-Marie",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Brianna-Ste-Marie-vs-Jaine-Fragoso_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Half Guard",
+          "Deep Half Guard",
+          "Mount"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Kimura (attempt)",
+          "Underhook",
+          "Guard Pass"
+        ],
+        "transitions": [
+          "Half Guard to Mount",
+          "Mount to Half Guard",
+          "Half Guard to Mount"
+        ]
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Brianna Ste Marie vs Jaine Fragoso",
+      "videoId": "Q5ut4mRtyF8",
+      "videoUrl": "https://www.youtube.com/watch?v=Q5ut4mRtyF8",
+      "winner": "Brianna Ste-Marie",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Brianna-Ste-Marie-vs-Janaina-Maia_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Double Pull",
+          "Knee Bar Attempt",
+          "Straight Ankle Lock Attempt",
+          "Deep Half Guard",
+          "Dog Fight Position",
+          "Knee Cut Pass Attempt",
+          "Closed Guard",
+          "Foot Lock Attempt"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Knee Bar Attempt",
+          "Straight Ankle Lock Attempt",
+          "Knee Cut Pass Attempt",
+          "Foot Lock Attempt"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Brianna Ste Marie vs Janaina Maia",
+      "videoId": "4UVvi80yidM",
+      "videoUrl": "https://www.youtube.com/watch?v=4UVvi80yidM",
+      "winner": "Brianna Ste-Marie",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Cassia-Moura-vs-Thaynara-Victória_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Outside Passing",
+          "Split Pass Position",
+          "Spider Open Guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Pass with Back Take",
+          "Takeown Style Transition to the Back"
+        ],
+        "transitions": [
+          "From Spider Guard to Defensive Position",
+          "From Outside Passing to Split Pass Position"
+        ]
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Cassia Moura vs Thaynara Victória",
+      "videoId": "jRX2wRjWZiQ",
+      "videoUrl": "https://www.youtube.com/watch?v=jRX2wRjWZiQ",
+      "winner": "Cassia Moura",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Diego-Pato-vs-Jamil-Hill-Taylor_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Shallow Lasso",
+          "Lapel Guard",
+          "Squatting Leg Drag Position",
+          "Leg Pin",
+          "Closed Guard",
+          "Gubber Guard",
+          "Mount",
+          "Side Control",
+          "Half Guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Toe Hold",
+          "Guard Pass"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Diego Pato vs Jamil Hill Taylor",
+      "videoId": "lDSZkDhovfE",
+      "videoUrl": "https://www.youtube.com/watch?v=lDSZkDhovfE",
+      "winner": "Diego Pato",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Diego-Pato-vs-Joao-Bisnaga_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "De La Riva"
+        ],
+        "submissions": [
+          "Choke"
+        ],
+        "techniques": [
+          "Lapel grip",
+          "Double sleeve control",
+          "Sweep",
+          "Choke"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Choke",
+      "title": "Diego Pato vs Joao Bisnaga",
+      "videoId": "c21YX4A1J0c",
+      "videoUrl": "https://www.youtube.com/watch?v=c21YX4A1J0c",
+      "winner": "Diego Pato",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Diego-Pato-vs-Osvaldo-Queixinho_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "50/50 Guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Strong Sleeve Grip",
+          "Leg Drag Pass",
+          "Omoplata",
+          "Sweep"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Diego Pato vs Osvaldo Queixinho",
+      "videoId": "vhU6y6taUqw",
+      "videoUrl": "https://www.youtube.com/watch?v=vhU6y6taUqw",
+      "winner": "Diego Pato",
+      "year": 2024
+    },
+    {
+      "event": "European Championship 2024",
+      "file": "Elijah-Dorsey-vs-Espen-Mathiesen_European-Championship-2024.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "Side Control",
+          "Neutral Spot"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Jump Over Guard",
+          "Escape",
+          "Reset Position",
+          "Pressure"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": "Decision",
+      "title": "Elijah Dorsey vs Espen Mathiesen",
+      "videoId": "rs4O_WQawzM",
+      "videoUrl": "https://www.youtube.com/watch?v=rs4O_WQawzM",
+      "winner": "Elijah Dorsey",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Elijah-Dorsey-vs-Matheus-Luna_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Standing position",
+          "Stack position",
+          "Side control",
+          "Turtle"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Triangle attempt",
+          "Wrecking Ball style pass"
+        ],
+        "transitions": [
+          "From standing to stack position",
+          "From guard to side control",
+          "From guard to turtle"
+        ]
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Elijah Dorsey vs Matheus Luna",
+      "videoId": "tiy4Lfb-sbk",
+      "videoUrl": "https://www.youtube.com/watch?v=tiy4Lfb-sbk",
+      "winner": "Elijah Dorsey",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Erich-Munis-vs-Kristof-Szucs_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Single Leg X-Guard",
+          "Guard",
+          "X-Guard with lapel"
+        ],
+        "submissions": [
+          "Foot Lock"
+        ],
+        "techniques": [
+          "Foot Lock",
+          "Takedown"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Foot Lock",
+      "title": "Erich Munis vs Kristof Szucs",
+      "videoId": "oI6rut10MsI",
+      "videoUrl": "https://www.youtube.com/watch?v=oI6rut10MsI",
+      "winner": "Erich Munis",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Erich-Munis-vs-Marcus-Scooby_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Lasso Guard",
+          "Deep De La Riva X-Guard",
+          "50/50 Guard"
+        ],
+        "submissions": [
+          "Ezekiel Choke"
+        ],
+        "techniques": [
+          "Sweep",
+          "Guard Pass",
+          "Straight Ankle Lock Attempt",
+          "Ezekiel Choke"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Ezekiel Choke",
+      "title": "Erich Munis vs Marcus Scooby",
+      "videoId": "38EmoOoK2UM",
+      "videoUrl": "https://www.youtube.com/watch?v=38EmoOoK2UM",
+      "winner": "Erich Munis",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Erich-Munis-vs-Pedro-Machado_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Closed Guard",
+          "Deep De La Riva X-Guard",
+          "One Leg X-Guard",
+          "X-Guard"
+        ],
+        "submissions": [
+          "N/A"
+        ],
+        "techniques": [
+          "Guard Pull",
+          "Underhook on the Leg",
+          "Double Sleeve Control",
+          "Standing Single Leg",
+          "Sweep",
+          "Guard Pass"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Erich Munis vs Pedro Machado",
+      "videoId": "ZwAarZCW3MY",
+      "videoUrl": "https://www.youtube.com/watch?v=ZwAarZCW3MY",
+      "winner": "Erich Munis",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Gabi-McComb-vs-Cassia-Moura_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "Knee Cut",
+          "Lapel Guard"
+        ],
+        "submissions": [
+          "Armbar Attempt",
+          "Loop Choke Attempt"
+        ],
+        "techniques": [
+          "Armbar Attempt",
+          "Sweep",
+          "Single-Leg Takedown Defense",
+          "Guard Pull",
+          "Illegal Grip Penalty",
+          "Leg Drag Attempt",
+          "Guard Pass",
+          "Loop Choke Attempt",
+          "Knee on Belly Attempt"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Gabi McComb vs Cassia Moura",
+      "videoId": "oLfmlNg32iA",
+      "videoUrl": "https://www.youtube.com/watch?v=oLfmlNg32iA",
+      "winner": "Gabi McComb",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Gabi-McComb-vs-Vitoria-Vieira_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Shallow Lasso",
+          "Turtle"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Back Take",
+          "Scissor Sweep",
+          "Sweep/Scramble to Top Position",
+          "Cartwheel Pass",
+          "Cross Choke (X-choke)"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Gabi McComb vs Vitoria Vieira",
+      "videoId": "EPRMZNQSlZE",
+      "videoUrl": "https://www.youtube.com/watch?v=EPRMZNQSlZE",
+      "winner": "Gabi McComb",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Gabrieli-Pessanha-vs-Mayara-Custodio_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Closed Guard",
+          "Collar and Sleeve Guard",
+          "Lapel Guard",
+          "Mount",
+          "Back Control"
+        ],
+        "submissions": [
+          "Pressure from the back"
+        ],
+        "techniques": [
+          "Cross Sleeve Grip",
+          "Cross Collar Grip"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Pressure from the back",
+      "title": "Gabrieli Pessanha vs Mayara Custodio",
+      "videoId": "9NjG9REwZYo",
+      "videoUrl": "https://www.youtube.com/watch?v=9NjG9REwZYo",
+      "winner": "Gabrieli Pessanha",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Gabrieli-Pessanha-vs-Melissa-Stricker_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Lapel Grip",
+          "Elevation",
+          "Back Control"
+        ],
+        "submissions": [
+          "Rear Naked Choke"
+        ],
+        "techniques": [
+          "Toe Hold",
+          "Straight Ankle Lock",
+          "Sweep",
+          "Rear Naked Choke"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Rear Naked Choke",
+      "title": "Gabrieli Pessanha vs Melissa Stricker",
+      "videoId": "eywyiHb9fuw",
+      "videoUrl": "https://www.youtube.com/watch?v=eywyiHb9fuw",
+      "winner": "Gabrieli Pessanha",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Gabrieli-Pessanha-vs-Tamiris-Silva_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Classic Arm Drag",
+          "Closed Guard",
+          "Back Control"
+        ],
+        "submissions": [
+          "Crossface Pressure"
+        ],
+        "techniques": [
+          "Arm Lock",
+          "Foot Lock",
+          "Hip Bump Sweep",
+          "Kata Gatame (Arm-Triangle Choke)",
+          "Cross Collar Choke",
+          "Crossface Pressure"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Crossface Pressure",
+      "title": "Gabrieli Pessanha vs Tamiris Silva",
+      "videoId": "Zweh4xIzld8",
+      "videoUrl": "https://www.youtube.com/watch?v=Zweh4xIzld8",
+      "winner": "Gabrieli Pessanha",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Gustavo-Batista-vs-Joao-Nicolite_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "50/50 Guard",
+          "Mount",
+          "Knee on Belly",
+          "Back Control"
+        ],
+        "submissions": [
+          "Armbar"
+        ],
+        "techniques": [
+          "Sweep",
+          "Guard Pass",
+          "X-Choke Attempt",
+          "Armbar"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Armbar",
+      "title": "Gustavo Batista vs Joao Nicolite",
+      "videoId": "T0smMhf1pDo",
+      "videoUrl": "https://www.youtube.com/watch?v=T0smMhf1pDo",
+      "winner": "Gustavo Batista",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Gutemberg-Pereira-vs-Felipe-Costa_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Foot Sweep",
+          "Uchimata",
+          "Single Leg Takedown",
+          "Closed Guard",
+          "Half Guard",
+          "Mount",
+          "High Guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Advantage (for Foot Sweep attempt)",
+          "Wrist Lock attempt",
+          "Deep Cross Collar Grip",
+          "Guard Pull"
+        ],
+        "transitions": [
+          "From Standing to Closed Guard",
+          "From Closed Guard to Half Guard",
+          "Attempted Mount transition"
+        ]
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Gutemberg Pereira vs Felipe Costa",
+      "videoId": "43enUFUyJDU",
+      "videoUrl": "https://www.youtube.com/watch?v=43enUFUyJDU",
+      "winner": "Gutemberg Pereira",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Horlando-Monteiro-vs-Paulo-Merlin_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Leg Drag",
+          "X-Guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Straight Ankle Lock",
+          "Sweep",
+          "Triangle Choke",
+          "Arm Lock"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": "Triangle Choke",
+      "title": "Horlando Monteiro vs Paulo Merlin",
+      "videoId": "ObZMdGgKvzA",
+      "videoUrl": "https://www.youtube.com/watch?v=ObZMdGgKvzA",
+      "winner": "Horlando Monteiro",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Jamil-Hill-Taylor-vs-Marco-Mendes_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Double guard pull",
+          "Full guard",
+          "Side control",
+          "Lasso guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Sweep",
+          "Collar choke"
+        ],
+        "transitions": [
+          "Transition to full guard from double guard pull",
+          "Attempted side control pass",
+          "Sweep attempt from lasso guard"
+        ]
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Jamil Hill Taylor vs Marco Mendes",
+      "videoId": "LZlqe5ZMuf8",
+      "videoUrl": "https://www.youtube.com/watch?v=LZlqe5ZMuf8",
+      "winner": "Jamil Hill-Taylor",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Janaina-Maia-vs-Cassia-Moura_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Double Guard Pull",
+          "Lasso Guard",
+          "High Collar Grip",
+          "Chest to Chest Connection",
+          "Side Control",
+          "Mount"
+        ],
+        "submissions": [
+          "N/A"
+        ],
+        "techniques": [
+          "Sweep"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Janaina Maia vs Cassia Moura",
+      "videoId": "zr30_uoS0wM",
+      "videoUrl": "https://www.youtube.com/watch?v=zr30_uoS0wM",
+      "winner": "Janaina Maia",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Janaina-Maia-vs-Vitória-Assis_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Closed Guard",
+          "High Guard",
+          "Side Control",
+          "Back Control"
+        ],
+        "submissions": [
+          "Lapel Choke"
+        ],
+        "techniques": [
+          "Triangle Attempt",
+          "Overhook",
+          "Armbar Attempt",
+          "Reverse Angle Sweep",
+          "Arm Lock Attempt",
+          "Lapel Choke"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Lapel Choke",
+      "title": "Janaina Maia vs Vitória Assis",
+      "videoId": "2cqEaTS6NHA",
+      "videoUrl": "https://www.youtube.com/watch?v=2cqEaTS6NHA",
+      "winner": "Janaina Maia",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Joao-Bisnaga-vs-Ademir-Barreto_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Double Sleeve Grips",
+          "Cross Collar and Sleeve",
+          "Lasso Guard",
+          "Shin to Shin Hook",
+          "X Guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Sweep"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Joao Bisnaga vs Ademir Barreto",
+      "videoId": "qkdOOoTFCRY",
+      "videoUrl": "https://www.youtube.com/watch?v=qkdOOoTFCRY",
+      "winner": "Joao Bisnaga",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Joao-Bisnaga-vs-Kennedy-Maciel_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "Double Sleeve Control",
+          "Shallow Lasso",
+          "Single Leg X"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Guard Pull",
+          "Triangle Attempt",
+          "Omoplata Attempt",
+          "Sweep",
+          "Single Leg Takedown",
+          "Pass Attempt",
+          "Foot Lock Attempt"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Joao Bisnaga vs Kennedy Maciel",
+      "videoId": "nie9rk4O5L8",
+      "videoUrl": "https://www.youtube.com/watch?v=nie9rk4O5L8",
+      "winner": "Joao Bisnaga",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Marcus-Scooby-vs-Gutemberg-Pereira_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Uchi Mata setup",
+          "Guard pull",
+          "Closed Guard",
+          "Flat Half Guard",
+          "De La Riva X-Guard",
+          "Heavy Half Guard",
+          "Turtle Position"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Sweep",
+          "Flying Armbar",
+          "Omoplata",
+          "Triangle Attempt"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Marcus Scooby vs Gutemberg Pereira",
+      "videoId": "CSby1KSPYo8",
+      "videoUrl": "https://www.youtube.com/watch?v=CSby1KSPYo8",
+      "winner": "Marcus Scooby",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Marcus-Scooby-vs-Roosevelt-Souza_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Guard"
+        ],
+        "submissions": [
+          "Choke"
+        ],
+        "techniques": [
+          "Triangle",
+          "Scooby Sweep",
+          "Single-Leg Takedown",
+          "Uchimata"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Choke",
+      "title": "Marcus Scooby vs Roosevelt Souza",
+      "videoId": "7TTXtMtMV8w",
+      "videoUrl": "https://www.youtube.com/watch?v=7TTXtMtMV8w",
+      "winner": "Marcus Scooby",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Mauricio-Oliveira-vs-Manuel-Ribamar_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "Knee Cut Pass",
+          "Back Control",
+          "Single Leg X",
+          "Lasso Guard"
+        ],
+        "submissions": [
+          "N/A"
+        ],
+        "techniques": [
+          "Judo-esque Takedown",
+          "Guard Pull",
+          "Advantage for Passing Pressure",
+          "Single Leg Escape",
+          "Pant and Sleeve Grip",
+          "Collar Grip",
+          "Back Step Counter"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Mauricio Oliveira vs Manuel Ribamar",
+      "videoId": "yp28oAj5tfg",
+      "videoUrl": "https://www.youtube.com/watch?v=yp28oAj5tfg",
+      "winner": "Mauricio Oliveira",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Melissa-Stricker-vs-Isabely-Lemos_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Closed Guard",
+          "Reverse De La Riva",
+          "Shin to Shin",
+          "Knee on Belly"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Sweep",
+          "X-Choke",
+          "Guard Pass",
+          "Omoplata Sweep",
+          "Lapel Grip"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Melissa Stricker vs Isabely Lemos",
+      "videoId": "0QarKz992YU",
+      "videoUrl": "https://www.youtube.com/watch?v=0QarKz992YU",
+      "winner": "Melissa Stricker",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Melissa-Stricker-vs-Nathiely-de-Jesus_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "Deep Half Guard",
+          "Lasso Guard",
+          "Single Leg X"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Guard Pull",
+          "Lapel Grip",
+          "Sweep",
+          "Omoplata",
+          "Arm Drag",
+          "Triangle Attempt"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Melissa Stricker vs Nathiely de Jesus",
+      "videoId": "QoaIuqDFGnU",
+      "videoUrl": "https://www.youtube.com/watch?v=QoaIuqDFGnU",
+      "winner": "Melissa Stricker",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Nathiely-de-Jesus-vs-Maca-Vicentini_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Lasso Guard",
+          "De La Riva Guard",
+          "Back Control"
+        ],
+        "submissions": [
+          "Choke from the Back"
+        ],
+        "techniques": [
+          "Sweep",
+          "Choke from the Back"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Choke from the back",
+      "title": "Nathiely de Jesus vs Maca Vicentini",
+      "videoId": "L0GAqFqHROc",
+      "videoUrl": "https://www.youtube.com/watch?v=L0GAqFqHROc",
+      "winner": "Nathiely de Jesus",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Nathiely-de-Jesus-vs-Tamiris-Silva_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Spider Guard",
+          "Closed Guard",
+          "Spider Lasso",
+          "Double Lasso",
+          "D'Arce Grip",
+          "50/50 Guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Armlock",
+          "Omoplata",
+          "Scissors Sweep"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Nathiely de Jesus vs Tamiris Silva",
+      "videoId": "PMtnHATu1Zk",
+      "videoUrl": "https://www.youtube.com/watch?v=PMtnHATu1Zk",
+      "winner": "Nathiely de Jesus",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Pedro-Machado-vs-Kjetil-Lydvo_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Passing position",
+          "Guard",
+          "Closed guard",
+          "Deep half guard",
+          "Top position"
+        ],
+        "submissions": [
+          "N/A"
+        ],
+        "techniques": [
+          "John Wayne sweep",
+          "Omoplata",
+          "Sweep",
+          "Pass"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Pedro Machado vs Kjetil Lydvo",
+      "videoId": "IzcJdUllvlo",
+      "videoUrl": "https://www.youtube.com/watch?v=IzcJdUllvlo",
+      "winner": "Pedro Machado",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Tainan-Dalpra-vs-Elijah-Dorsey_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Straight Ankle Lock",
+          "Side Control",
+          "Back Control",
+          "Back Control Triangle"
+        ],
+        "submissions": [
+          "Straight Ankle Lock (attempt)",
+          "Armbar from Back Control Triangle"
+        ],
+        "techniques": [
+          "Sweep attempt",
+          "Ankle Lock attempt",
+          "Two-on-One Grip",
+          "Back Take"
+        ],
+        "transitions": [
+          "Escape from Ankle Lock to Side Control",
+          "Transition to Back Take"
+        ]
+      },
+      "submissionFinish": true,
+      "submissionType": "Armbar from Back Control Triangle",
+      "title": "Tainan Dalpra vs Elijah Dorsey",
+      "videoId": "pKYaDrC9PeQ",
+      "videoUrl": "https://www.youtube.com/watch?v=pKYaDrC9PeQ",
+      "winner": "Tainan Dalpra",
+      "year": 2024
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Tainan-Dalpra-vs-Gabriel-Galvao_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "De La Riva Guard",
+          "Lasso Guard",
+          "Closed Guard",
+          "Single X-Guard",
+          "Pressure Passing",
+          "Front Headlock",
+          "Back Control",
+          "Mount",
+          "Closed Guard"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Sweep",
+          "Feet on Shoulders Frame",
+          "Toe Hold",
+          "Takedown",
+          "Leg Drag Pass",
+          "Side to Side Pressure"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Tainan Dalpra vs Gabriel Galvao",
+      "videoId": "_l3aU3SadHY",
+      "videoUrl": "https://www.youtube.com/watch?v=_l3aU3SadHY",
+      "winner": "Tainan Dalpra",
+      "year": 2024
+    },
+    {
+      "event": "Pan Championship 2023",
+      "file": "Tainan-Dalpra-vs-Rolando-Samson_Pan-Championship-2023.md",
+      "labels": {
+        "positions": [
+          "X-guard",
+          "Back take"
+        ],
+        "submissions": [
+          "Bow and Arrow choke"
+        ],
+        "techniques": [
+          "Sweep",
+          "Bow and Arrow choke"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Bow and Arrow Choke",
+      "title": "Tainan Dalpra vs Rolando Samson",
+      "videoId": "RL21JIWp4VM",
+      "videoUrl": "https://www.youtube.com/watch?v=RL21JIWp4VM",
+      "winner": "Tainan Dalpra",
+      "year": 2023
+    },
+    {
+      "event": "World Championship 2021",
+      "file": "Tainan-Dalpra-vs-Ronaldo-Junior_World-Championship-2021.md",
+      "labels": {
+        "positions": [
+          "Guard",
+          "Sit-up Guard",
+          "Top Control",
+          "Spider Guard",
+          "Back Control",
+          "50/50 Guard"
+        ],
+        "submissions": [
+          "Omoplata"
+        ],
+        "techniques": [
+          "Double Collar Grip",
+          "Lapel Grip",
+          "Sweep",
+          "Single Leg Takedown",
+          "Omoplata"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": "Decision",
+      "title": "Tainan Dalpra vs Ronaldo Junior",
+      "videoId": "Vp-X1K00G9Q",
+      "videoUrl": "https://www.youtube.com/watch?v=Vp-X1K00G9Q",
+      "winner": "Tainan Dalpra",
+      "year": 2021
+    },
+    {
+      "event": "World Championship 2021",
+      "file": "Tainan-Dalpra-vs-Tommy-Langaker_World-Championship-2021.md",
+      "labels": {
+        "positions": [
+          "Double guard pull",
+          "Top position",
+          "Bottom position",
+          "Side control",
+          "Back control",
+          "Body triangle grip"
+        ],
+        "submissions": [
+          "Choke from the back"
+        ],
+        "techniques": [
+          "Sweep",
+          "Guard pass",
+          "Choke from the back"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": true,
+      "submissionType": "Choke from the back",
+      "title": "Tainan Dalpra vs Tommy Langaker",
+      "videoId": "_VNIAkoTFYs",
+      "videoUrl": "https://www.youtube.com/watch?v=_VNIAkoTFYs",
+      "winner": "Tainan Dalpra",
+      "year": 2021
+    },
+    {
+      "event": "The IBJJF Crown 2024",
+      "file": "Tamiris-Silva-vs-Giovanna-Jara_The-IBJJF-Crown-2024.md",
+      "labels": {
+        "positions": [
+          "Closed Guard",
+          "Lasso Guard",
+          "Heavy Shoulder Pressure",
+          "Half Guard",
+          "Head Control",
+          "Back Control"
+        ],
+        "submissions": [],
+        "techniques": [
+          "Guard Pull",
+          "Two-on-One Grip",
+          "Ezekiel Choke",
+          "Head Control"
+        ],
+        "transitions": []
+      },
+      "submissionFinish": false,
+      "submissionType": null,
+      "title": "Tamiris Silva vs Giovanna Jara",
+      "videoId": "YLVJCa2Uitw",
+      "videoUrl": "https://www.youtube.com/watch?v=YLVJCa2Uitw",
+      "winner": "Tamiris Silva",
+      "year": 2024
+    }
+  ],
+  "version": 1
+}
